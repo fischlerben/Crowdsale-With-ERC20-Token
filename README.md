@@ -1,0 +1,2 @@
+# Crowdsale-With-ERC20-Token
+This Blockchain example utilizes the OpenZeppelin Solidity library to create an ERC20 token that is minted through a crowdsale contract.  The contract will allow users to send ETH and get back PUP, or PupperCoin, the hypothetical name of the company's token.  The contract mints the tokens automatically and distributes them to buyers in one transaction.  A real-world pre-production test is shown in which I deploy the crowdsale to the Kovan testnet.  
