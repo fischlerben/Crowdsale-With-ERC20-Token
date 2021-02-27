@@ -61,7 +61,6 @@ RefundablePostDeliveryCrowdsale
 
 ![kovan_deployment_two](/Screenshots/kovan_deployment_two.gif?raw=true)
 
-
 ## 6. Add Token to MyCrypto and test a transaction:
 - You can test the time functionality by replacing now with fakenow, and creating a setter function to modify fakenow to whatever time you want to simulate. You can also set the close time to be now + 5 minutes, or whatever timeline you'd like to test for a shorter crowdsale.
 - When sending Ether to the contract, make sure you hit your goal that you set (in this case, 800 ETH), and finalize the sale using the Crowdsale's finalize function. In order to finalize, isOpen must return false (isOpen comes from TimedCrowdsale which checks to see if the close time has passed yet). Since the goal is 300 Ether, you may need to send from multiple accounts. If you run out of prefunded accounts in Ganache, you can create a new workspace.
@@ -69,5 +68,8 @@ RefundablePostDeliveryCrowdsale
 - You can add custom tokens in MyCrypto from the Add custom token feature.
 - You can also do the same for MetaMask. Make sure to purchase higher amounts of tokens in order to see the denomination appear in your wallets as more than a few wei worth.
 
+![token_contract](/Screenshots/token_contract.gif?raw=true)
 
-GIF HERE
+![kovan_transaction](/Screenshots/kovan_transaction.gif?raw=true)
+
+![kovan_success](/Screenshots/kovan_success.png?raw=true)
