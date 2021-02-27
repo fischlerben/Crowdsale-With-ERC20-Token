@@ -44,8 +44,6 @@ RefundablePostDeliveryCrowdsale
 
 ## 4. Test Crowdsale by Purchasing Tokens:
 1. Change values from Wei to Ether, and populate that field with a number
-2. Scroll down to your PupperCoinSale, grab an address from your Ganache chain (NOT the first one, the one connected to Remix), and populate the "address beneficiary" field next to the buyTokens button with that address.  Click buyTokens, and let MetaMask go to work.  To confirm it worked, go to the PupperCoin tab and use the balanceOf button to check the balance of the address you sent Ether to - it should not be empty:
+2. Scroll down to your PupperCoinSale, grab an address from your Ganache chain (NOT the first one, the one connected to Remix), and populate the "address beneficiary" field next to the buyTokens button with that address.  Click buyTokens, and let MetaMask go to work.  To confirm it worked, go to the PupperCoin tab and use the totalSupply button to check confirm your purchase using that same Ganache address:
 
-![deployment_four_error](/Screenshots/deployment_four_error.gif?raw=true)
-
-![mm_error](/Screenshots/mm_error.png?raw=true)
+![deployment_four](/Screenshots/deployment_four.gif?raw=true)
