@@ -46,4 +46,28 @@ RefundablePostDeliveryCrowdsale
 1. Change values from Wei to Ether, and populate that field with a number
 2. Scroll down to your PupperCoinSale, grab an address from your Ganache chain (NOT the first one, the one connected to Remix), and populate the "address beneficiary" field next to the buyTokens button with that address.  Click buyTokens, and let MetaMask go to work.  To confirm it worked, go to the PupperCoin tab and use the totalSupply button to check confirm your purchase using that same Ganache address:
 
+**Important Note: make sure that when creating your PupperCoinSale and setting the "cap" parameter, set it to a very large number so as to not receive a "Gas Estimation Failed" error when purchasing tokens.  You can see in my PupperCoinCrowdsale.sol file that I set my cap to  33333333333333333333333333333333333333, as when it was previously set to a lower number like 500, I would receive the Gas Estimation Failed pop-up with an unsuccessful purchase.  If necessary, change your cap, re-deploy your contract, initialize PupperCoinSale and PupperCoin, and then try to purchase ETH.**
+
 ![deployment_four](/Screenshots/deployment_four.gif?raw=true)
+
+---
+
+## 5. Deploy Crowdsale to Kovan or Ropsten testnet:
+- Store the deployed address for later. Switch MetaMask to your desired network (Kovan or Ropsten), and use the Deploy tab in Remix to deploy your contracts. Take note of the total gas cost, and compare it to how costly it would be in reality. 
+- Since you are deploying to a network that you don't have control over, faucets will not likely give out 300 test Ether. You can simply reduce the goal when deploying to a testnet to an amount much smaller, like 10,000 wei.
+- Take note of the https://kovan.etherscan.io address created - this will link you to the address of your token.
+
+![kovan_deployment](/Screenshots/kovan_deployment.gif?raw=true)
+
+![kovan_deployment_two](/Screenshots/kovan_deployment_two.gif?raw=true)
+
+
+## 6. Add Token to MyCrypto and test a transaction:
+- You can test the time functionality by replacing now with fakenow, and creating a setter function to modify fakenow to whatever time you want to simulate. You can also set the close time to be now + 5 minutes, or whatever timeline you'd like to test for a shorter crowdsale.
+- When sending Ether to the contract, make sure you hit your goal that you set (in this case, 800 ETH), and finalize the sale using the Crowdsale's finalize function. In order to finalize, isOpen must return false (isOpen comes from TimedCrowdsale which checks to see if the close time has passed yet). Since the goal is 300 Ether, you may need to send from multiple accounts. If you run out of prefunded accounts in Ganache, you can create a new workspace.
+- Remember, the refund feature of RefundablePostDeliveryCrowdsale only allows for refunds once the crowdsale is closed and the goal is met.  See the OpenZeppelin RefundableCrowdsale documentation for details as to why this is logic is used to prevent potential attacks on your token's value.
+- You can add custom tokens in MyCrypto from the Add custom token feature.
+- You can also do the same for MetaMask. Make sure to purchase higher amounts of tokens in order to see the denomination appear in your wallets as more than a few wei worth.
+
+
+GIF HERE
